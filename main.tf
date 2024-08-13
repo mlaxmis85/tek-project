@@ -18,13 +18,13 @@ resource "aws_iam_access_key" "access_keys" {
   for_each = aws_iam_user.users
   user = each.value.name
 }
-
+# create accesskeys secret name in secretmanager for each user
 resource "aws_secretsmanager_secret" "user_secrets" {
   for_each = aws_iam_access_key.access_keys
   name        = each.value.user
   description = "Access key and secret access key for user ${each.value.user}"
 }
-
+# store accesskeys secret in secretmanager for each user
 resource "aws_secretsmanager_secret_version" "user_secrets_version" {
   for_each = aws_iam_access_key.access_keys
   secret_id     = aws_secretsmanager_secret.user_secrets[each.key].id
