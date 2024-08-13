@@ -1,2 +1,2 @@
-# tek-project
+# tekSystems-project
 teksystems-project
