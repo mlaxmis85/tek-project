@@ -1,3 +1,7 @@
+#####
+## Terraform Code - Create IAM users with access keys, store secrets in Secrets manager, create IAM group, IAM roles, attach policies, 
+#  Create s3Bucket, EC2 Instance, create and attach s3bucketReadWrite policy
+####
 # Create IAM users
 resource "aws_iam_user" "users" {
   for_each = var.iam_users
