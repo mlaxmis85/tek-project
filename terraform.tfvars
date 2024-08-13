@@ -1,0 +1,5 @@
+app-s3-bucket = "my-app-bucket5"
+db_username = "rdsmaster"
+db_password = "Cyberark2024"
+amiID= "ami-098143f68772b34f5"
+instanceType = "t2.micro"
